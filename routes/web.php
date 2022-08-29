@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\admin\SlideController;
+use App\Http\Controllers\admin\CategoryController;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -16,14 +17,16 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::group(['prefix' =>'admin','middleware'=> 'auth'],function(){
     Route::get('dashboard',[DashboardController::class,'index'])->name('admin.dashboard');
     Route::resource('slider',SlideController::class);
+    Route::resource('category',CategoryController::class);
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

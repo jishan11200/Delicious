@@ -1,8 +1,10 @@
 @extends('layouts.app')
 @section('content')
-
+<a href="{{route('slider.create')}}" class="btn btn-primary btn-sm my-3">Add Slider</a>
 <div class="card card-preview">
+
     <div class="card-inner">
+
         <table class="datatable-init nowrap table">
             <thead>
                 <tr>
@@ -21,8 +23,18 @@
                     <td>{{$slider->sub_title}}</td>
                     <td><img src="{{asset('uploads/slider/'.$slider->images)}}" style="width: 140px; height:80px;" alt="" srcset=""></td>
                     <td>
-                        <a href=""class="btn btn-warning">Edit</a>
-                        <a href=""class="btn btn-danger">Delete</a>
+                        <a href="{{route('slider.edit',$slider->id)}}"class="btn btn-primary btn-sm float-left">Edit</a>
+                        <form id="delete-form-{{$slider->id}}" action="{{route('slider.destroy',$slider->id)}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                        </form>
+                        <button type="button" class="btn btn-danger btn-sm float-right" onclick="if(confirm('Are you sure to delete this?')){
+                            event.preventDefault();
+                            document.getElementById('delete-form-{{$slider->id}}').submit();
+                        }else{
+                            event.preventDefault();
+                        }
+                        ">Delete</button>
                     </td>
 
                 </tr>
