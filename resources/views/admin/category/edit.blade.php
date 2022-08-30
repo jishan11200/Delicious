@@ -5,7 +5,7 @@
     <div class="card-inner">
         <div class="preview-block">
             <span class="preview-title-lg overline-title">Edit Category</span>
-           <form action="{{route('category.update',$category->id)}}" method="POST"  >
+           <form action="{{route('category.update',$category->id)}}" method="POST">
              @csrf
              @method('PUT')
             <div class="row gy-4">
@@ -13,7 +13,7 @@
                 <div class="col-lg-6 col-sm-6">
                     <div class="form-group">
                         <div class="form-control-wrap">
-                            <input type="text" class="form-control form-control-xl form-control-outlined" id="outlined-normal" name="title" value="{{ $category->name}}">
+                            <input type="text" class="form-control form-control-xl form-control-outlined" id="outlined-normal" name="name" value="{{ $category->name}}">
                             <label class="form-label-outlined" for="outlined-normal">Category Name</label>
                         </div>
                     </div>
