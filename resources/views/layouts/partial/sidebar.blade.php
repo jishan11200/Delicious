@@ -5,7 +5,7 @@
             <a href="#" class="nk-nav-compact nk-quick-nav-icon d-none d-xl-inline-flex" data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a>
         </div>
         <div class="nk-sidebar-brand">
-            <a href="html/index.html" class="logo-link nk-sidebar-logo">
+            <a href="{{route('admin.dashboard')}}" class="logo-link nk-sidebar-logo">
                 <img class="logo-light logo-img" src="{{asset('backend')}}/images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
                 <img class="logo-dark logo-img" src="{{asset('backend')}}/images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
             </a>
@@ -55,6 +55,23 @@
                         <!-- .nk-menu-sub -->
                     </li>
                     <!-- .nk-menu-item -->
+                    {{-- .nk-menu-item --}}
+                    <li class="nk-menu-item has-sub">
+                        <a href="#" class="nk-menu-link nk-menu-toggle">
+                            <span class="nk-menu-icon"><em class="icon ni ni-users"></em></span>
+                            <span class="nk-menu-text">Manage Item</span>
+                        </a>
+                        <ul class="nk-menu-sub">
+                            <li class="nk-menu-item ">
+                                <a href="{{route('item.index')}}" class="nk-menu-link"><span class="nk-menu-text">All Items</span></a>
+                            </li>
+                            <li class="nk-menu-item ">
+                                <a href="{{route('item.create')}}" class="nk-menu-link"><span class="nk-menu-text">Add item</span></a>
+                            </li>
+
+                        </ul>
+                        <!-- .nk-menu-sub -->
+                    </li>
                     <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-file-docs"></em></span>

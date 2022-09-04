@@ -3,7 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\admin\SlideController;
 use App\Http\Controllers\admin\CategoryController;
-
+use App\Http\Controllers\Admin\ItemController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -25,6 +25,7 @@ Route::group(['prefix' =>'admin','middleware'=> 'auth'],function(){
     Route::get('dashboard',[DashboardController::class,'index'])->name('admin.dashboard');
     Route::resource('slider',SlideController::class);
     Route::resource('category',CategoryController::class);
+    Route::resource('item',ItemController::class);
 });
 
 Auth::routes();

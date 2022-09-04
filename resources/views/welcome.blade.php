@@ -61,7 +61,7 @@
           <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
           <li class="dropdown"><a href="#"><span>Auth</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="{{ Route('login' )}}">login</a></li>
+              <li><a href="{{ Route('login')}}">login</a></li>
               <li><a href="{{ Route('register') }}">signup</a></li>
             </ul>
           </li>
