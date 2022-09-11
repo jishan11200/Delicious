@@ -75,15 +75,15 @@
                     <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-file-docs"></em></span>
-                            <span class="nk-menu-text">AML / KYCs</span>
+                            <span class="nk-menu-text">Manage Reservation</span>
                         </a>
                         <ul class="nk-menu-sub">
                             <li class="nk-menu-item">
-                                <a href="html/kyc-list-regular.html" class="nk-menu-link"><span class="nk-menu-text">KYC List - Regular</span></a>
+                                <a href="{{route('reservation.index')}}" class="nk-menu-link"><span class="nk-menu-text">All Reservation</span></a>
                             </li>
-                            <li class="nk-menu-item">
+                            {{-- <li class="nk-menu-item">
                                 <a href="html/kyc-details-regular.html" class="nk-menu-link"><span class="nk-menu-text">KYC Details - Regular</span></a>
-                            </li>
+                            </li> --}}
                         </ul>
                         <!-- .nk-menu-sub -->
                     </li>
