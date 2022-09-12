@@ -448,8 +448,9 @@
 
             <div class="swiper-slide">
               <div class="row event-item">
+
                 <div class="col-lg-6">
-                  <img src="assets/img/event-birthday.jpg" class="img-fluid" alt="">
+                  <img src="{{asset('frontend')}}/img/event-birthday.jpg" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 content">
                   <h3>Birthday Parties</h3>
@@ -503,7 +504,7 @@
             <div class="swiper-slide">
               <div class="row event-item">
                 <div class="col-lg-6">
-                  <img src="assets/img/event-custom.jpg" class="img-fluid" alt="">
+                  <img src="{{asset('frontend')}}/img/event-custom.jpg" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 content">
                   <h3>Custom Parties</h3>
@@ -672,24 +673,26 @@
         </div>
 
         <div class="row">
-
-          <div class="col-lg-4 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="assets/img/chefs/chefs-1.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Master Chef</span>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+            @foreach($chefs as $key=>$chef)
+            <div class="col-lg-4 col-md-6">
+                <div class="member">
+                  <div class="pic"><img src="{{asset('uploads/chef/'.$chef->image)}}" class="img-fluid" alt=""></div>
+                  <div class="member-info">
+                    <h4>{{$chef->name}}</h4>
+                    <span>{{$chef->title}}</span>
+                    <div class="social">
+                      <a href=""><i class="bi bi-twitter"></i></a>
+                      <a href=""><i class="bi bi-facebook"></i></a>
+                      <a href=""><i class="bi bi-instagram"></i></a>
+                      <a href=""><i class="bi bi-linkedin"></i></a>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
+            @endforeach
 
-          <div class="col-lg-4 col-md-6">
+
+          {{-- <div class="col-lg-4 col-md-6">
             <div class="member">
               <div class="pic"><img src="assets/img/chefs/chefs-2.jpg" class="img-fluid" alt=""></div>
               <div class="member-info">
@@ -707,7 +710,7 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="member">
-              <div class="pic"><img src="assets/img/chefs/chefs-3.jpg" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="{{asset('frontend')}}/img/chefs/chefs-3.jpg" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>William Anderson</h4>
                 <span>Cook</span>
@@ -719,7 +722,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> --}}
 
         </div>
 

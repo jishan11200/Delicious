@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Slider;
 use App\Models\Category;
+use App\Models\Chefs;
 use App\Models\Item;
 use App\Models\Reservation;
 
@@ -30,7 +31,8 @@ class HomeController extends Controller
         $sliders = Slider::all();
         $categories = Category::all();
         $items = Item::all();
-        return view('welcome',compact('sliders','categories','items'));
+        $chefs = Chefs::all();
+        return view('welcome',compact('sliders','categories','items','chefs'));
     }
 
    public function reserve(Request $request)
