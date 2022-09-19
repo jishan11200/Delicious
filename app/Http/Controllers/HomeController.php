@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Slider;
 use App\Models\Category;
 use App\Models\Chefs;
+use App\Models\Contact;
 use App\Models\Item;
 use App\Models\Reservation;
 
@@ -32,6 +33,7 @@ class HomeController extends Controller
         $categories = Category::all();
         $items = Item::all();
         $chefs = Chefs::all();
+        // $contacts = Contact::all();
         return view('welcome',compact('sliders','categories','items','chefs'));
     }
 
@@ -56,6 +58,23 @@ class HomeController extends Controller
         $reservation->message = $request->message;
         $reservation->status =false;
         $reservation->save();
+        return redirect()->back();
+   }
+
+   public function contact(Request $request)
+   {
+        $this->validate($request,[
+            'name' => 'required',
+            'email' => 'required',
+            'subject' => 'required',
+            'message' => 'required',
+        ]);
+        $contact = new Contact();
+        $contact->name = $request->name;
+        $contact->email = $request->email;
+        $contact->subject = $request->subject;
+        $contact->message = $request->message;
+        $contact->save();
         return redirect()->back();
    }
 }

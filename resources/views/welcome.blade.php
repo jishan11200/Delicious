@@ -45,7 +45,7 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
       <div class="logo me-auto">
-        <h1><a href="index.html">Delicious</a></h1>
+        <h1><a href="/">Delicious</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -59,13 +59,14 @@
           <li><a class="nav-link scrollto" href="#events">Events</a></li>
           <li><a class="nav-link scrollto" href="#chefs">Chefs</a></li>
           <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
           <li class="dropdown"><a href="#"><span>Auth</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="{{ Route('login')}}">login</a></li>
-              <li><a href="{{ Route('register') }}">signup</a></li>
+              <li><a href="{{ Route('register')}}">signup</a></li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -536,7 +537,7 @@
     </section><!-- End Events Section -->
 
     <!-- ======= Book A Table Section ======= -->
-    <section id="book-a-table" class="book-a-table">
+    <section id="book-a-table" class="book-a-table info-wrap">
       <div class="container">
 
         <div class="section-title">
@@ -596,48 +597,48 @@
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-1.jpg" class="gallery-lightbox">
-                <img src="assets/img/gallery/gallery-1.jpg" alt="" class="img-fluid">
+              <a href="{{asset('frontend')}}/img/gallery/gallery-1.jpg" class="gallery-lightbox">
+                <img src="{{asset('frontend')}}/img/gallery/gallery-1.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-2.jpg" class="gallery-lightbox">
-                <img src="assets/img/gallery/gallery-2.jpg" alt="" class="img-fluid">
+              <a href="{{asset('frontend')}}/img/gallery/gallery-2.jpg" class="gallery-lightbox">
+                <img src="{{asset('frontend')}}/img/gallery/gallery-2.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-3.jpg" class="gallery-lightbox">
-                <img src="assets/img/gallery/gallery-3.jpg" alt="" class="img-fluid">
+              <a href="{{asset('frontend')}}/img/gallery/gallery-3.jpg" class="gallery-lightbox">
+                <img src="{{asset('frontend')}}/img/gallery/gallery-3.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-4.jpg" class="gallery-lightbox">
-                <img src="assets/img/gallery/gallery-4.jpg" alt="" class="img-fluid">
+              <a href="{{asset('frontend')}}/img/gallery/gallery-4.jpg" class="gallery-lightbox">
+                <img src="{{asset('frontend')}}/img/gallery/gallery-4.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-5.jpg" class="gallery-lightbox">
-                <img src="assets/img/gallery/gallery-5.jpg" alt="" class="img-fluid">
+              <a href="{{asset('frontend')}}/img/gallery/gallery-5.jpg" class="gallery-lightbox">
+                <img src="{{asset('frontend')}}/img/gallery/gallery-5.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-6.jpg" class="gallery-lightbox">
-                <img src="assets/img/gallery/gallery-6.jpg" alt="" class="img-fluid">
+              <a href="{{asset('frontend')}}/img/gallery/gallery-6.jpg" class="gallery-lightbox">
+                <img src="{{asset('frontend')}}/img/gallery/gallery-6.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
@@ -867,17 +868,18 @@
           </div>
         </div>
 
-        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+        <form action="{{route('contact')}}" method="POST" class="info-wrap">
+            @csrf
           <div class="row">
             <div class="col-md-6 form-group">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+              <input type="text" name="name" class="form-control" placeholder="Your Name" required>
             </div>
             <div class="col-md-6 form-group mt-3 mt-md-0">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+              <input type="text" class="form-control" name="email" placeholder="Your Email" required>
             </div>
           </div>
           <div class="form-group mt-3">
-            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+            <input type="text" class="form-control" name="subject" placeholder="Subject" required>
           </div>
           <div class="form-group mt-3">
             <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
@@ -887,7 +889,7 @@
             <div class="error-message"></div>
             <div class="sent-message">Your message has been sent. Thank you!</div>
           </div>
-          <div class="text-center"><button type="submit">Send Message</button></div>
+          <div class="text-center"><button type="submit" class="btn btn-warning">Send Message</button></div>
         </form>
 
       </div>
